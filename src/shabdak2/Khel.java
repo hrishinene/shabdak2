@@ -18,11 +18,14 @@ public class Khel {
 	}
 	
 	private void play() {
-		SanketShodhak shodhak = new SanketShodhak();
+		SanketShodhak shodhak = new SanketShodhak(shabda);
 		while(prayatna.size() < MaxAttempts) {
 			renderScreen();
+			if (true)
+				break;
+			
 			Shabda tarka = new Shabda(ShabdakRenderer.takeInput(Samwad.TarkaVicharana));
-			shodhak.doChikitsa(shabda, tarka);
+			shodhak.doChikitsa(tarka);
 			Prayatna navaPrayatna = Prayatna.createAttempt(tarka, shodhak);
 			prayatna.add(navaPrayatna);
 			keyboard.update(shodhak);
@@ -46,9 +49,7 @@ public class Khel {
 		ShabdakRenderer.displayTitle(Samwad.Sheershak);
 		
 		// Attempts
-		for (int i = 0; i < MaxAttempts; i++) {
-			ShabdakRenderer.displayPrayatna(prayatna, i);
-		}
+		ShabdakRenderer.displayPrayatna(prayatna, MaxAttempts);
 		
 		// Keyboard
 		ShabdakRenderer.renderKeyboard(keyboard);
@@ -60,12 +61,7 @@ public class Khel {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		if (args.length != 1) {
-			System.out.println("Please input the word to be used for guess!");
-			return;
-		}
-		
-		String str = args[0];
+		String str = args.length == 0 ? "कुलूप" : args[0];
 		System.out.println("Selected word = " + str);
 
 		Khel khel = new Khel(str);

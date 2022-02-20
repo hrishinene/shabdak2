@@ -39,11 +39,13 @@ public class Sanket {
 
 		case Chook:
 			return ANSI_BLACK_BACKGROUND;
+		default:
+			break;
 
 		}
 
-//		return ANSI_WHITE_BACKGROUND;
-		return ANSI_CYAN_BACKGROUND;
+		return ANSI_BLACK_BACKGROUND + ANSI_WHITE;
+//		return ANSI_CYAN_BACKGROUND;
 	}
 
 	public static String resetBKColor() {

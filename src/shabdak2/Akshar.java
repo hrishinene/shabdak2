@@ -10,7 +10,8 @@ import java.util.List;
  *
  */
 public class Akshar extends Unicode {
-	public static List<Akshar> Akshars = toAksharList('क','ख','ग','घ','ङ','च','छ','ज','झ','ञ','ट','ठ','ड','ढ','ण','त','थ','द','ध','न','प','फ','ब','भ','म','य','र','ल','व','श','ष','स','ह','क़','ख़','ग़','ज़','ड़','ढ़','फ़','य़');
+//	public static List<Akshar> Akshars = toAksharList('अ','आ','इ','ई','उ','ऊ','ए','ऐ','ओ','औ','क','ख','ग','घ','ङ','च','छ','ज','झ','ञ','ट','ठ','ड','ढ','ण','त','थ','द','ध','न','प','फ','ब','भ','म','य','र','ल','व','श','ष','स','ह','ळ','क़','ख़','ग़','ज़','ड़','ढ़','फ़','य़');
+	public static List<Akshar> Akshars = toAksharList(Sthiranka.Moolakshare);
 
 	public Akshar(char c) {
 		super(c);

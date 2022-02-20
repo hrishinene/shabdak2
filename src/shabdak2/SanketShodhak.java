@@ -4,10 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SanketShodhak {
-
+	Shabda moolShabda;
 	Map<Akshar, SanketAkshar> aksharSanketMap = new HashMap<>();
 	
-	public void doChikitsa(Shabda shabda, Shabda tarka) {
+	public SanketShodhak(Shabda shabda) {
+		this.moolShabda = shabda;
+	}
+
+	public void doChikitsa(Shabda tarka) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -1,13 +1,13 @@
 package shabdak2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Shabda {
 	public Shabda(String str) {
 		// Iterate over chars, and prepare akshar and swaransh
 		Aksharavatar aksharavatar = null;
-		for (int i = 0; i < str.length(); i++) {
-			
+		for (int i = 0; i < str.length(); i++) {			
 			char c = str.charAt(i);
 			if (Akshar.isAkshar(c)) {
 				aksharavatar = new Aksharavatar(new Akshar(c));
@@ -21,5 +21,16 @@ public class Shabda {
 		// TODO Auto-generated constructor stub
 	}
 
-	List<Aksharavatar> akshare;
+	List<Aksharavatar> akshare = new ArrayList<Aksharavatar>();
+
+	@Override
+	public String toString() {
+		StringBuffer retval = new StringBuffer();
+		for (Aksharavatar aksharavatar : akshare) {
+			retval.append("[").append(aksharavatar.toString()).append("]");
+		}
+		return retval.toString();
+	}
+	
+	
 }
