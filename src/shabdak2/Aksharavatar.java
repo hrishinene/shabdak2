@@ -23,7 +23,7 @@ public class Aksharavatar {
 			else if (Swaransh.isSwaransh(c))
 				addSwaransh(new Swaransh(c));
 			else
-				throw new RuntimeException("Invalid Character: " + c);
+				throw new AvaidhShabdaException("Invalid Character: " + c + "(" + (int) c + ")");
 		}
 
 	}

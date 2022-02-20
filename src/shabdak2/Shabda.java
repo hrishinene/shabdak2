@@ -15,10 +15,9 @@ public class Shabda {
 			} else if (Swaransh.isSwaransh(c)) {
 				aksharavatar.addSwaransh(new Swaransh(c));
 			} else {
-				throw new RuntimeException("Invalid Character: " + c);
+				throw new AvaidhShabdaException("Invalid Character: " + c + "(" + (int) c + ")");
 			}
 		}
-		// TODO Auto-generated constructor stub
 	}
 
 	List<Aksharavatar> akshare = new ArrayList<Aksharavatar>();
@@ -55,5 +54,25 @@ public class Shabda {
 		}
 		
 		return null;
+	}
+
+	/**
+	 * Validate on the basis of 2 things
+	 * Word length
+	 * Repeatition of characters
+	 */
+	public void validate() {
+		// Check Repeatition
+		for (int i = 0; i < akshare.size(); i++) {
+			for (int j = i + 1; j < akshare.size(); j++) {
+				if (akshare.get(i).moolAkshar.equals(akshare.get(j).moolAkshar))
+					throw new AvaidhShabdaException("शब्द " + this + "मधे अक्षरांची पुनरावृत्ती आहे!");
+			}
+		}
+		
+		// Check Size
+		if (akshare.size() != Khel.WordLength)
+			throw new AvaidhShabdaException("शब्द " + Khel.WordLength + "अक्षरी असावा!");
+
 	}
 }

@@ -5,7 +5,7 @@ public class Kal {
 
 	public Kal(char c) {
 		if (!Akshar.isAkshar(c))
-			throw new RuntimeException("Invalid character: " + c);
+			throw new AvaidhShabdaException("Invalid Character: " + c + "(" + (int) c + ")");
 		
 		sanketakshar = new SanketAkshar(new Aksharavatar(c));
 	}

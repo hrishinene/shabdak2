@@ -18,7 +18,7 @@ public class SanketAkshar {
 
 	@Override
 	public String toString() {
-		return Sanket.getBKColor(sanket) + avatar + Sanket.resetBKColor();
+		return Sanket.getBKColor(sanket) + " " + avatar + " " + Sanket.resetBKColor();
 	}
 	
 	public static void main(String[] args) {

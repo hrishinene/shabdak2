@@ -5,7 +5,8 @@ import java.util.List;
 
 public class Khel {
 	// To be taken as input to main.
-	public static final int MaxAttempts = 8;
+	public static int MaxAttempts = 8;
+	public static int WordLength = 3;
 	
 	Shabda shabda;
 	Kalpat keyboard = new Kalpat();
@@ -15,6 +16,22 @@ public class Khel {
 	
 	public Khel(String str) {
 		shabda = new Shabda(str);
+		WordLength = shabda.akshare.size();
+		shabda.validate();
+		ShabdakRenderer.debugLog("Word Length = " + WordLength);
+
+	}
+	
+	private Shabda readTarka() {
+		try {
+			Shabda tarka = new Shabda(ShabdakRenderer.takeInput(Samwad.TarkaVicharana));
+			tarka.validate();
+			return tarka;
+		} catch (AvaidhShabdaException e) {
+			System.out.println("अवैध शब्द - " + e.getMessage() + "\nपुन्हा प्रयत्न करा");
+			return readTarka();
+		}
+
 	}
 	
 	private void play() {
@@ -22,8 +39,8 @@ public class Khel {
 		while(prayatna.size() < MaxAttempts) {
 			renderScreen();
 			
-			Shabda tarka = new Shabda(ShabdakRenderer.takeInput(Samwad.TarkaVicharana));
-
+			Shabda tarka = readTarka();
+			
 			ShabdakRenderer.debugLog("Tarka = " + tarka);
 			
 			shodhak.doChikitsa(tarka);
@@ -64,8 +81,19 @@ public class Khel {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String str = args.length == 0 ? "कुलूप" : args[0];
-		System.out.println("Selected word = " + str);
+		// Validate input
+		
+		String str = args.length < 1 ? Sthiranka.getRandomShabda() : args[0]; // pick random 3 letter		
+		MaxAttempts = args.length < 2 ? 8 : Integer.parseInt(args[1]);
+	
+		if (str.equalsIgnoreCase(Sthiranka.RANDOM))
+			str = Sthiranka.getRandomShabda();
+		
+		WordLength = str.length();
+		
+		ShabdakRenderer.debugLog("Selected word = " + str);
+		ShabdakRenderer.debugLog("MaxAttempts = " + MaxAttempts);
+
 
 		Khel khel = new Khel(str);
 		khel.play();

@@ -41,7 +41,7 @@ public class Kalpat {
 		buf.append(keyRows.get(2)).append(Sthiranka.PADDING8).append(keyRows.get(3)).append("\n");
 		buf.append(keyRows.get(4)).append(Sthiranka.PADDING8).append(keyRows.get(5)).append("\n");
 		buf.append(keyRows.get(6)).append(Sthiranka.PADDING8).append(keyRows.get(7)).append("\n");
-		buf.append(Sthiranka.PADDING8).append(Sthiranka.PADDING5).append(keyRows.get(8));
+		buf.append(Sthiranka.PADDING5).append(Sthiranka.PADDING5).append(Sthiranka.PADDING8).append(keyRows.get(8));
 		
 		return buf.toString();
 	}
