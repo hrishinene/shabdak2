@@ -52,13 +52,13 @@ public class Khel {
 
 			if (navaPrayatna.isSuccess()) {
 				renderScreen();
-				System.out.println(Samwad.shabasaki());
+				System.out.println(Samwad.shabasaki(shabda));
 				return;
 			}
 			
 		}
 		
-		System.out.println(Samwad.protsahan(shabda.toString()));
+		System.out.println(Samwad.protsahan(shabda));
 	}
 	
 	private void renderScreen() {

@@ -34,13 +34,13 @@ public class ShabdakRenderer {
 
 	public static void displayTitle(String title) {
 //		System.out.println("\n---------------------");
-		System.out.println("\n" + Sanket.ANSI_RED_BACKGROUND + title + Sanket.ANSI_RESET + "\n"); // use padding render
+		System.out.println("\n" + Sthiranka.Colors.ANSI_RED_BACKGROUND + title + Sthiranka.Colors.ANSI_RESET + "\n"); // use padding render
 //		System.out.println("---------------------\n");
 	}
 
 	public static void renderKeyboard(Kalpat keyboard) {
 //		System.out.println("\n---------------------");
-		System.out.println("\n" + Sanket.ANSI_CYAN_BACKGROUND + "कळपाट" + Sanket.ANSI_RESET + "\n"); // use padding render
+		System.out.println("\n" + Sthiranka.Colors.ANSI_BLUE_BACKGROUND + "कळपाट" + Sthiranka.Colors.ANSI_RESET + "\n"); // use padding render
 //		System.out.println("---------------------\n");
 
 		System.out.println(keyboard.toString());
@@ -49,7 +49,7 @@ public class ShabdakRenderer {
 
 	public static String takeInput(String prompt) {
 		System.out.println("\n---------------------");
-		System.out.println(Sanket.ANSI_BLACK_BACKGROUND + prompt + Sanket.ANSI_RESET);
+		System.out.println(Sthiranka.Colors.ANSI_BLACK_BACKGROUND + prompt + Sthiranka.Colors.ANSI_RESET);
 
 		String retval = "समूळ";
 		Console cnsl = System.console();
