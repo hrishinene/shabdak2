@@ -53,8 +53,7 @@ public class Shabda {
 			if (tarkAkshar.getAkshar().equals(mooLAvatar.getAkshar()))
 				return new SanketAkshar(mooLAvatar, Sanket.SanketPrakar.Javalpaas);
 		}
-
 		
-		return new SanketAkshar(new Aksharavatar(mooLAvatar.getAkshar()), Sanket.SanketPrakar.Chook);
+		return null;
 	}
 }

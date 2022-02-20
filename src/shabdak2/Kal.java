@@ -12,7 +12,7 @@ public class Kal {
 
 	public void update(SanketShodhak shodhak) {
 		SanketAkshar naveen = shodhak.shodh(sanketakshar.avatar.moolAkshar);
-		if (naveen != null && !naveen.avatar.equals(sanketakshar.avatar))
+		if (naveen != null && !naveen.equals(sanketakshar))
 			sanketakshar = naveen;
 	}
 

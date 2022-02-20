@@ -16,7 +16,17 @@ public class SanketShodhak {
 		for (Aksharavatar mooLAvatar : moolShabda.akshare) {
 			SanketAkshar sanketakshar = tarka.match(mooLAvatar, indx++);
 			
-			aksharSanketMap.put(sanketakshar.getAkshar(), sanketakshar);
+			if (sanketakshar != null)
+				aksharSanketMap.put(sanketakshar.getAkshar(), sanketakshar);
+		}
+		
+		// Add the missing letters from the Tarka
+		for (Aksharavatar tarkakshar : tarka.akshare) {
+			Akshar mooLakshar = tarkakshar.moolAkshar;
+			if (aksharSanketMap.containsKey(mooLakshar))
+					continue;
+			
+			aksharSanketMap.put(mooLakshar, new SanketAkshar(new Aksharavatar(mooLakshar), Sanket.SanketPrakar.Chook));
 		}
 	}
 

@@ -9,6 +9,6 @@ public class Samwad {
 	}
 
 	public static String shabasaki() {
-		return "बहुत खूब!! भले शाब्बास!!\nपुढील प्रयत्नासाठी खूप खूप  शुभेच्छा !";
+		return "\n\n\n---बहुत खूब!! भले शाब्बास!!\nपुढील प्रयत्नासाठी खूप खूप  शुभेच्छा !\n\n";
 	}
 }

@@ -27,8 +27,13 @@ public class Prayatna {
 	}
 
 	public boolean isSuccess() {
-		// TODO Auto-generated method stub
-		return false;
+		for (SanketAkshar sanket : sanketakshare) {
+			// All must be Achook
+			if (!sanket.sanket.equals(Sanket.SanketPrakar.Achook))
+				return false;
+			
+		}
+		return true;
 	}
 
 	@Override
