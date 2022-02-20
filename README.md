@@ -1,5 +1,11 @@
 # shabdak2
 Devnagari Script oriented shabdak with a game and classes to analyse the words
+Here is how to run:
+1. Pull the source
+2. Run following command:
+java -jar shabdak2.jar
+
+---
 
 Here is the procedure to build and run multi-attempt, multi-alphabet - kana/matra/velanti/ukar/anuswar/ etc. words
 1. Pull the source
