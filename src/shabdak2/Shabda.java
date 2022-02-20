@@ -31,6 +31,30 @@ public class Shabda {
 		}
 		return retval.toString();
 	}
-	
-	
+
+	/**
+	 * Where magic happens
+	 * @param mooLAvatar
+	 * @param i
+	 * @return
+	 */
+	public SanketAkshar match(Aksharavatar mooLAvatar, int i) {
+		// Check for exact match first
+		Aksharavatar tarkAksharavatar = akshare.get(i);
+		if (tarkAksharavatar.getAkshar().equals(mooLAvatar.getAkshar()))
+			return new SanketAkshar(mooLAvatar, Sanket.SanketPrakar.Achook);
+		
+		// Loop through all and check for Approximate
+		for (int j = 0; j < akshare.size(); j++) {
+			if (i == j)
+				continue;
+			
+			Aksharavatar tarkAkshar = akshare.get(j);
+			if (tarkAkshar.getAkshar().equals(mooLAvatar.getAkshar()))
+				return new SanketAkshar(mooLAvatar, Sanket.SanketPrakar.Javalpaas);
+		}
+
+		
+		return new SanketAkshar(new Aksharavatar(mooLAvatar.getAkshar()), Sanket.SanketPrakar.Chook);
+	}
 }

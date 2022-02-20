@@ -6,9 +6,9 @@ import java.util.List;
 public class Aksharavatar {
 	Akshar moolAkshar;
 	List<Swaransh> swaransh = new ArrayList<Swaransh>();
-	
+
 	public Aksharavatar(Akshar akshar) {
-		this.moolAkshar = akshar;		
+		this.moolAkshar = akshar;
 	}
 
 	public Aksharavatar(char c) {
@@ -25,12 +25,12 @@ public class Aksharavatar {
 			else
 				throw new RuntimeException("Invalid Character: " + c);
 		}
-		
+
 	}
 
 	public void addSwaransh(Swaransh c) {
 		swaransh.add(c);
-		
+
 	}
 
 	@Override
@@ -40,10 +40,12 @@ public class Aksharavatar {
 		for (Swaransh sw : swaransh) {
 			str.append(sw);
 		}
-		
+
 		return str.toString();
 	}
 
-	
-	
+	public Akshar getAkshar() {
+		return this.moolAkshar;
+	}
+
 }

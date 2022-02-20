@@ -25,4 +25,8 @@ public class SanketAkshar {
 		SanketAkshar s = new SanketAkshar(new Aksharavatar("कु"), Sanket.SanketPrakar.Achook);
 		System.out.println(s.toString());
 	}
+
+	public Akshar getAkshar() {
+		return avatar.getAkshar();
+	}
 }

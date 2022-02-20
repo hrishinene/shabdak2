@@ -21,11 +21,14 @@ public class Khel {
 		SanketShodhak shodhak = new SanketShodhak(shabda);
 		while(prayatna.size() < MaxAttempts) {
 			renderScreen();
-			if (true)
-				break;
 			
 			Shabda tarka = new Shabda(ShabdakRenderer.takeInput(Samwad.TarkaVicharana));
+
+			ShabdakRenderer.debugLog("Tarka = " + tarka);
+			
 			shodhak.doChikitsa(tarka);
+			ShabdakRenderer.debugLog("Shodhak: " + shodhak);
+			
 			Prayatna navaPrayatna = Prayatna.createAttempt(tarka, shodhak);
 			prayatna.add(navaPrayatna);
 			keyboard.update(shodhak);

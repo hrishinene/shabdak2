@@ -39,8 +39,16 @@ public class ShabdakRenderer {
 		System.out.println("\n---------------------");
 		System.out.println(prompt);
 
+		String retval = "समूळ";
 		Console cnsl = System.console();
-		return cnsl.readLine();
+		if (cnsl != null)
+			retval = cnsl.readLine();
+		
+		return retval == null ? "समूळ" : retval;
+	}
+
+	public static void debugLog(String logStmt) {
+		System.out.println("[DEBUG] - " + logStmt);
 	}
 
 }
