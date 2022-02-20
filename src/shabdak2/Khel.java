@@ -6,7 +6,6 @@ import java.util.List;
 public class Khel {
 	// To be taken as input to main.
 	public static final int MaxAttempts = 8;
-	public static final String Title = "शब्दक - २";
 	
 	Shabda shabda;
 	Kalpat keyboard = new Kalpat();
@@ -22,13 +21,21 @@ public class Khel {
 		SanketShodhak shodhak = new SanketShodhak();
 		while(prayatna.size() < MaxAttempts) {
 			renderScreen();
-			Shabda tarka = new Shabda(ShabdakRenderer.takeInput("काय आहे तुमचा तर्क?"));
+			Shabda tarka = new Shabda(ShabdakRenderer.takeInput(Samwad.TarkaVicharana));
 			shodhak.doChikitsa(shabda, tarka);
-			prayatna.add(Prayatna.createAttempt(tarka, shodhak));
+			Prayatna navaPrayatna = Prayatna.createAttempt(tarka, shodhak);
+			prayatna.add(navaPrayatna);
 			keyboard.update(shodhak);
+
+			if (navaPrayatna.isSuccess()) {
+				renderScreen();
+				System.out.println(Samwad.shabasaki());
+				return;
+			}
+			
 		}
 		
-		System.out.println("क्षमस्व! शब्द चुकला!!\nशब्द होता:  " + shabda.toString() + "\nपुढील प्रयत्नासाठी शुभेच्छा !");
+		System.out.println(Samwad.protsahan(shabda.toString()));
 	}
 	
 	private void renderScreen() {
@@ -36,7 +43,7 @@ public class Khel {
 		ShabdakRenderer.clearScreen();
 		
 		// Title
-		ShabdakRenderer.displayTitle(Title);
+		ShabdakRenderer.displayTitle(Samwad.Sheershak);
 		
 		// Attempts
 		for (int i = 0; i < MaxAttempts; i++) {

@@ -14,4 +14,9 @@ public class Prayatna {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public boolean isSuccess() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

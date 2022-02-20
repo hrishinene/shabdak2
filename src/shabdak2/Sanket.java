@@ -28,5 +28,26 @@ public class Sanket {
 	}
 	
 	SanketPrakar sanketPrakar;
+
+	public static String getBKColor(SanketPrakar sanket) {
+		switch (sanket) {
+		case Achook:
+			return ANSI_GREEN_BACKGROUND;
+
+		case Javalpaas:
+			return ANSI_YELLOW_BACKGROUND;
+
+		case Chook:
+			return ANSI_BLACK_BACKGROUND;
+
+		}
+
+//		return ANSI_WHITE_BACKGROUND;
+		return ANSI_CYAN_BACKGROUND;
+	}
+
+	public static String resetBKColor() {
+		return ANSI_RESET;
+	}
 	
 }
